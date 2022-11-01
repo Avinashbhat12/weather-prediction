@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./static/css/s.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>Login</h1>
+      </div>
+      <div class="fields">
+        
+        <div class="field" >
+          <form method="post">
+          {% csrf_token %}
+          <input class="input" type="text" placeholder="username" name="username"/ required>
+        </div>
+        <div class="field">
+          <input class="input" type="password" placeholder="Password" name="pwd"/ required>
+        </div>
+        <div class="field">
+          {% for message in messages%}
+          {{message}}
+
+          {% endfor %}
+       
+        <input class="reg-btn" type="submit" value="LOGIN">
+      </div>
+      <div class="home.btn">
+        <a class="home-btn" href="/">home_page</a>
+        <br></br>
+        <a class="register-btn" href="/register">register</a>
+      </div>
+    </div>       
+  </body>
+</html>
